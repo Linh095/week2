@@ -14,4 +14,5 @@ for (const char of sentence) {
 }
 
 setTimeout( () => process.stdout.write("\n"), timeout)
+
 // console.log();
