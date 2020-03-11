@@ -1,3 +1,5 @@
+let connection;
+
 const setupInput = function() {
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -10,6 +12,14 @@ const setupInput = function() {
 const handleUserInput = (data) => {
   if (data === "\x03") {
     process.exit();
+  } else if (data === "w") {
+    console.log("up")
+  } else if (data === "s") {
+    console.log("down")    
+  } else if (data === "a") {
+    console.log("left")
+  } else if (data === "d") {
+    console.log("right")
   }
 };
 
