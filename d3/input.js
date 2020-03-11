@@ -1,6 +1,8 @@
 let connection;
 
-const setupInput = function() {
+const setupInput = function(conn) {
+  connection = conn;
+
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
@@ -13,13 +15,13 @@ const handleUserInput = (data) => {
   if (data === "\x03") {
     process.exit();
   } else if (data === "w") {
-    console.log("up")
+    connection.write("Move: up");
   } else if (data === "s") {
-    console.log("down")    
+    connection.write("Move: down");
   } else if (data === "a") {
-    console.log("left")
+    connection.write("Move: left");
   } else if (data === "d") {
-    console.log("right")
+    connection.write("Move: right");
   }
 };
 

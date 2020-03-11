@@ -14,7 +14,7 @@ const connect = function() {
     console.log(data);
   });
 
-  let interval;
+  // let interval;
 
   conn.on("connect", (data) => {
     console.log("YAYYYYYYY GOT IN");
