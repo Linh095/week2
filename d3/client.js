@@ -19,7 +19,6 @@ const connect = function() {
   conn.on("connect", (data) => {
     console.log("YAYYYYYYY GOT IN");
     conn.write("Name: LN");
-
     // interval = setInterval(() => {
     //   conn.write("Move: up")
     // }, 500);
