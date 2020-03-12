@@ -1,5 +1,6 @@
 const request = require('request');
 const fs = require('fs');
+const readline = require('readline');
 
 
 const websiteURL = process.argv[2];
@@ -22,9 +23,11 @@ const writtingFile = (websiteText) => {
       return
     }
 
-    //console log if the file does exist
+    //console log if the file does 
     console.log("File already exists: " + fileSaveName);
-    console.error(err);
+
+
+    console.error('error' + err);
     return
   })
 }
@@ -33,6 +36,9 @@ const writtingFile = (websiteText) => {
 request(websiteURL, (error, response, body) => {
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+
+  //incase the page doesn't exist
+
 
   //do something to the body
   // console.log('body:', body);
